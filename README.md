@@ -4,21 +4,15 @@ Outil CLI Python 3.13 pour diagnostiquer à distance Active Directory, DNS, MySQ
 
 ## Installation
 
-Sur cette VM, l'environnement virtuel et les dépendances sont déjà installés :
-
-```bash
-cd /home/clienttoolbox/ntl-systoolbox
-.venv/bin/ntl-diagnostic --help
-```
-
-Pour une nouvelle installation Debian disposant de Python 3.13, installer le paquet système `python3.13-venv` si nécessaire, puis :
+Le dossier `.venv` n'est pas suivi par Git : il doit être recréé après un clonage. Sur Debian, avec Python 3.13 et le paquet système `python3.13-venv` installés, depuis le dossier du projet :
 
 ```bash
 python3.13 -m venv .venv
-.venv/bin/python -m pip install .
+.venv/bin/python -m pip install -e .
+.venv/bin/ntl-diagnostic --help
 ```
 
-Les dépendances sont déclarées dans `pyproject.toml`. Aucun outil ne doit être installé globalement sur les machines diagnostiquées, hormis Python 3 sur la cible Linux.
+Si la création échoue parce que `ensurepip` est absent, installer `python3.13-venv` avec le gestionnaire de paquets système, puis relancer ces commandes. Les dépendances sont déclarées dans `pyproject.toml`. Aucun outil ne doit être installé globalement sur les machines diagnostiquées, hormis Python 3 sur la cible Linux.
 
 ## Configuration et sécurité
 
