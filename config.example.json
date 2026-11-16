@@ -1,0 +1,36 @@
+{
+  "timeout": 5,
+  "ad": {
+    "host": "dc01.example.test",
+    "ca_file": "/etc/ssl/certs/ad-ca.pem"
+  },
+  "dns": {
+    "server": "192.0.2.10",
+    "name": "dc01.example.test",
+    "expected_ip": "192.0.2.10",
+    "windows_host": "dc01.example.test"
+  },
+  "mysql": {
+    "host": "db.example.test",
+    "port": 3306,
+    "user": "diagnostic",
+    "password_env": "NTL_MYSQL_PASSWORD",
+    "tls": true,
+    "ca_file": "/etc/ssl/certs/mysql-ca.pem"
+  },
+  "windows": {
+    "host": "dc01.example.test",
+    "port": 5986,
+    "user": "EXAMPLE\\diagnostic",
+    "password_env": "NTL_WINRM_PASSWORD",
+    "ca_file": "/etc/ssl/certs/windows-ca.pem",
+    "transport": "ntlm"
+  },
+  "linux": {
+    "host": "linux.example.test",
+    "port": 22,
+    "user": "diagnostic",
+    "key_file": "/home/clienttoolbox/.ssh/id_ed25519",
+    "known_hosts": "/home/clienttoolbox/.ssh/known_hosts"
+  }
+}

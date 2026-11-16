@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ntl-systoolbox"
+version = "0.1.0"
+description = "Diagnostics distants pour infrastructures Windows et Linux"
+requires-python = ">=3.13"
+dependencies = [
+    "dnspython>=2.7,<3",
+    "ldap3>=2.9,<3",
+    "mysql-connector-python>=9.2,<10",
+    "paramiko>=3.5,<5",
+    "pyspnego>=0.4,<1",
+    "pywinrm>=0.5,<1",
+]
+
+[project.scripts]
+ntl-diagnostic = "ntl_diagnostic.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ntl_diagnostic*"]
